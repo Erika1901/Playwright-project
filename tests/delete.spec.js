@@ -7,8 +7,8 @@ test('test', async ({ page }) => {
   await page.getByPlaceholder('Mot de passe').click();
   await page.getByPlaceholder('Mot de passe').fill('Malika2016*');
   await page.locator('#btn_login').click();
-  await page.locator('#style_popular_product_wrapper__z6J0h').getByRole('button').click();
+  await page.locator('div:nth-child(5) > .style_card_body__QuFGN > span > .style_card_body_img__mkV1D').click();
+  await page.getByRole('button', { name: 'Ajouter au panier' }).click();
   await page.locator('#style_content_cart_wrapper__mqNbf').click();
-  await page.locator('#style_card_wrapper__hrc1I div').nth(4).click();
-  await page.locator('#style_content_cart_header__NIJbw svg').click();
+  await page.locator('#style_card_wrapper__hrc1I div').filter({ hasText: 'Fauteuil Chaise...21.99 €1' }).locator('div').nth(3).click();
 });
