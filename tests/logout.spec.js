@@ -7,7 +7,7 @@ test('test', async ({ page }) => {
   await page.getByPlaceholder('Mot de passe').click();
   await page.getByPlaceholder('Mot de passe').fill('Malika2016*');
   await page.locator('#btn_login').click();
-  //page.pause;
+  
   try {
     
   page.setDefaultNavigationTimeout(30000)
