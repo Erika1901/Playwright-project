@@ -10,5 +10,6 @@ test('test', async ({ page }) => {
   await page.locator('div:nth-child(5) > .style_card_body__QuFGN > span > .style_card_body_img__mkV1D').click();
   await page.getByRole('button', { name: 'Ajouter au panier' }).click();
   await page.locator('#style_content_cart_wrapper__mqNbf').click();
-  await page.locator('#style_card_wrapper__hrc1I div').filter({ hasText: 'Fauteuil Chaise...21.99 €1' }).locator('div').nth(3).click();
+  page.pause;
+  await page.locator('#style_card_wrapper__hrc1I div').filter({ hasText: 'Fauteuil Chaise...263.88 €12' }).locator('svg').nth(2).click();
 });

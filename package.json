@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:reporter": "playwright test --headed",
+    "allure-report": "npx allure generate ./allure-results && allure open"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

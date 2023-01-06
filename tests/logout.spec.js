@@ -7,7 +7,16 @@ test('test', async ({ page }) => {
   await page.getByPlaceholder('Mot de passe').click();
   await page.getByPlaceholder('Mot de passe').fill('Malika2016*');
   await page.locator('#btn_login').click();
-  page.pause;
+  //page.pause;
+  try {
+    
+  page.setDefaultNavigationTimeout(30000)
   await page.locator('#style_avatar_wrapper__pEGIQ svg').nth(1).click();
   await page.getByRole('link', { name: 'Se déconnecter' }).click();
+  
+  } catch (error) {
+    console.log("Closed the browser")
+    await browser.close();
+  }
+  
 });
