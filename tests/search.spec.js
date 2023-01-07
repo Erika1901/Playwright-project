@@ -10,8 +10,9 @@ const datas = require("./data_search.json");
       await page.getByPlaceholder('Mot de passe').click();
       await page.getByPlaceholder('Mot de passe').fill('Malika2016*');
       await page.locator('#btn_login').click();
-      page.pause;
       await page.getByPlaceholder('Rechecher un produit').click();
+      page.pause;
+      await expect ( page.getByPlaceholder('Rechecher un produit')).toBeVisible();
       await page.getByPlaceholder('Rechecher un produit').fill(data.name);
     
     });
